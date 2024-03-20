@@ -16,8 +16,12 @@ public class BoundaryAfficherMarche {
 		else {
 			System.out.println(nomAcheteur+" vous trouverez au marché : ");
 			int i=0;
-			while (marche[i] != null) {
-				System.out.println(" - "+marche[i++]+" qui vend "+marche[i++]+" "+marche[i]);
+			StringBuilder affM = new StringBuilder();
+			while ((i< (marche.length-1))&&(marche[i] != null)) {
+				affM.append(" - "+marche[i++]+" ");
+				affM.append("qui vend "+marche[i++]);
+				affM.append(" "+marche[i++]+"\n");
+				System.out.println(affM.toString()); 
 			}
 		}
 	}
