@@ -29,13 +29,18 @@ public class BoundaryAcheterProduit {
 			System.out.println("Combien de fleurs voulez-vous acheter ?\n");
 			int qtt = scan.nextInt();
 			int qttVend = controlAcheterProduit.qttVendProd(vendeurProduit[nbVendeur]);
-			if (qttVend<qtt) {
-				System.out.println(nomAcheteur+" veut acheter "+qtt+" "+prod+", malheureusement "+vendeurProduit[nbVendeur]+
-						" n'en a plus que "+ qttVend+"."+nomAcheteur+" achete tout le stock");
-				controlAcheterProduit.acheterProduit(vendeurProduit[nbVendeur], qtt, prod);
-				}
-			else
-				System.out.println(nomAcheteur+" achète "+controlAcheterProduit.acheterProduit(vendeurProduit[nbVendeur], qtt, prod)+" "+prod+" à "+vendeurProduit[nbVendeur]);
+			if (qttVend == 0) {
+				System.out.println(nomAcheteur+" veut acheter "+qtt+" "+prod+" malheureusement il n'y en a plus");
+			}else {
+				if (qttVend<qtt) {
+					System.out.println(nomAcheteur+" veut acheter "+qtt+" "+prod+", malheureusement "+vendeurProduit[nbVendeur]+
+							" n'en a plus que "+ qttVend+"."+nomAcheteur+" achete tout le stock");
+					controlAcheterProduit.acheterProduit(vendeurProduit[nbVendeur], qtt, prod);
+					}
+				else
+					System.out.println(nomAcheteur+" achète "+controlAcheterProduit.acheterProduit(vendeurProduit[nbVendeur], qtt, prod)+" "+prod+" à "+vendeurProduit[nbVendeur]);
+				
+			}
 		}
 	}
 }
