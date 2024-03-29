@@ -15,7 +15,7 @@ public class BoundaryAcheterProduit {
 	public void acheterProduit(String nomAcheteur) {
 		System.out.println("Quel produit voulez-vous acheter ?\n");
 		String prod = scan.next();
-		if(!controlAcheterProduit.isHere(prod))
+		if(!controlAcheterProduit.estPresent(prod))
 			System.out.println("Désolé, personne ne vend ce produit au marché");
 		else {
 			System.out.println("Chez quel commerçant voulez-vous acheter des "+prod+" ?\n");

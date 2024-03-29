@@ -36,7 +36,7 @@ public class ControlAcheterProduit {
 		}
 		return vendeurProd;
 	}
-	public boolean isHere(String prod) {
+	public boolean estPresent(String prod) {
 		return village.rechercherVendeursProduit(prod) != null;
 	}
 	public int qttVendProd(String nomVendeur) {

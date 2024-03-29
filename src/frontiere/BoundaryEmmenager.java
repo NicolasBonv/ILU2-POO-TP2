@@ -45,12 +45,13 @@ public class BoundaryEmmenager {
 		forceDruide = Clavier.entrerEntier("Quelle est votre force ?");
 		int effetPotMin = -1;
 		int effetPotMax = -2;
-		while (effetPotMin > effetPotMax) {
+		// mettre en variable le test effetpot pour use dans le if
+		do { 
 			effetPotMin = Clavier.entrerEntier("Quelle est la force de potion la plus faible ?");
 			effetPotMax = Clavier.entrerEntier("Quelle est la force de potion la plus force ?");
 			if (effetPotMax < effetPotMin)
 				System.out.println("Attention Druide, vous vous êtes trompé entre le min et le max");
-		}
+		}while (effetPotMin > effetPotMax);
 		controlEmmenager.ajouterDruide(nomVisiteur, forceDruide, effetPotMin, effetPotMax);
 	}
 	private void emmenagerGaulois(String nomVisiteur) {
