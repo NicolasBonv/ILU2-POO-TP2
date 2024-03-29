@@ -18,7 +18,6 @@ class ControlEmmenagerTest {
 		village = new Village("le village des irréductibles",10,5);
 		abraracourcix = new Chef("Abraracourcix",10,village);
 		village.setChef(abraracourcix);
-		
 	}
 	@Test
 	void testControlEmmenager() {
